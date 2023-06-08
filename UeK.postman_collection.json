@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "85a0715f-f4c7-432e-a81b-7f710e1b1166",
+		"name": "UeK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20677872"
+	},
+	"item": [
+		{
+			"name": "M295",
+			"item": [
+				{
+					"name": "LB2",
+					"item": [
+						{
+							"name": "Tasks",
+							"item": [
+								{
+									"name": "Get All Tasks",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{3000}}/tasks/tasks",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Post New Task",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n      \"title\": \"LB2\",\r\n      \"creationDate\": \"2023-06-08T09:00:00\",\r\n      \"completionDate\": \"2023-06-08T17:00:00\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{3000}}/tasks/tasks",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Post New Task Fails",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n      \"creationDate\": \"2023-06-08T09:00:00\",\r\n      \"completionDate\": \"2023-06-08T17:00:00\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{3000}}/tasks/tasks",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Task With Id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{3000}}/tasks/tasks/1",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Task With Id Fails",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{3000}}/tasks/tasks/0",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks",
+												"0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Put Replace Task with another",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"clean room\",\r\n    \"creationDate\": \"2022-06-07T12:00:00\",\r\n    \"completionDate\": \"2022-06-08T23:59:00\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{3000}}/tasks/tasks/1",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Put Replace Task with another Copy Fails (id)",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"clean room\",\r\n    \"creationDate\": \"2022-06-07T12:00:00\",\r\n    \"completionDate\": \"2022-06-08T23:59:00\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{3000}}/tasks/tasks/0",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks",
+												"0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Put Replace Task with another Copy Fails (body)",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"creationDate\": \"2022-06-07T12:00:00\",\r\n    \"completionDate\": \"2022-06-08T23:59:00\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{3000}}/tasks/tasks/1",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Task With Id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{3000}}/tasks/tasks/1",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Task With Id Fails",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{3000}}/tasks/tasks/0",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"tasks",
+												"tasks",
+												"0"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Auth",
+							"item": [
+								{
+									"name": "Post Login joel@vontobelfamily.ch",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"joel@vontobelfamily.ch\",\r\n    \"password\": \"m295\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{3000}}/auth/login",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Post Login example@ergon.ch",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"example@ergon.ch\",\r\n    \"password\": \"m295\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{3000}}/auth/login",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ger verification",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{3000}}/auth/verify",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"auth",
+												"verify"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Logout",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{3000}}/auth/logout",
+											"host": [
+												"{{3000}}"
+											],
+											"path": [
+												"auth",
+												"logout"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get Not Valid URL",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
