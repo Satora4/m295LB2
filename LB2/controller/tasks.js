@@ -44,15 +44,16 @@ let tasks = [
 
 router.get('/tasks', (request, response) => {
     if (request.session.email === null || request.session.email === undefined) 
-        return response.status(401).json({ error: 'Session is esxpired'});
+        return response.status(403).json({ error: 'Forbidden'});
 
     request.headers["content-type", JSON];
+    console.log('/tasks get 200: sending tasks');
     return response.json(tasks.filter((t) => t.author === request.session.email)).status(200);
 });
 
 router.post('/tasks', (request, response) => {
     if (request.session.email === null || request.session.email === undefined) 
-        return response.status(401).json({ error: 'Session is esxpired'});
+        return response.status(403).json({ error: 'Forbidden'});
 
     request.headers["content-type", JSON];
     const data = request.body;
@@ -62,30 +63,34 @@ router.post('/tasks', (request, response) => {
         data.id = id.toString();
         data.author = request.session.email;
         tasks.push(data);
+        console.log('/tasts post 201: task created');
         return response.status(201).json(tasks.find((t) => t.id === data.id));
     } else {
-        return response.status(422).json({ error: 'Unprocessable Entity'})
+        console.log('/tasks post 406: invalid number of data in body');
+        return response.status(406).json({ error: 'Not Acceptable'})
     }
 });
 
 router.get('/tasks/:id', (request, response) => {
     if (request.session.email === null || request.session.email === undefined) 
-        return response.status(401).json({ error: 'Session is esxpired'});
+        return response.status(403).json({ error: 'Forbidden'});
 
     request.headers["content-type", JSON];
     const taskId = request.params.id;
     const task = tasks.find((t) => t.id === taskId);
 
     if (task !== undefined) {
+        console.log('/tasts/:id get 200: sending task');
         return response.json(task).status(200);
     } else {
+        console.log('/tasts/:id get 404: task not found');
         return response.status(404).json({ error: "task was not found"});
     }
-})
+});
 
 router.put('/tasks/:id', (request, response) => {
     if (request.session.email === null || request.session.email === undefined) 
-        return response.status(401).json({ error: 'Session is esxpired'});
+        return response.status(403).json({ error: 'Forbidden'});
 
     request.headers["content-type", JSON];
     const taskId = request.params.id;
@@ -96,26 +101,31 @@ router.put('/tasks/:id', (request, response) => {
     if (tasks.find((t) => t.id === taskId) !== undefined) {
         if (data.completionDate && data.creationDate && data.title) {
             tasks.splice(taskId -1, 1, data);
+            console.log('/tasks/:id put 200: task updated');
             return response.json(tasks.find((t) => t.id === taskId)).status(200);
         } else {
-            return response.status(422).json({ error: 'Unprocessable Entity'})
+            console.log('/tasks/:id put 406: invalid number of data in body');
+            return response.status(406).json({ error: 'Not Acceptable'})
         }
     } else {
+        console.log('/tasts/:id put 404: task not found');
         return response.status(404).json({ error: "task was not found"});
     }
 });
 
 router.delete('/tasks/:id', (request, response) => {
     if (request.session.email === null || request.session.email === undefined) 
-        return response.status(401).json({ error: 'Session is esxpired'});
+        return response.status(403).json({ error: 'Forbidden'});
 
     request.headers["content-type", JSON];
     const taskId = request.params.id;
 
     if (tasks.find((t) => t.id === taskId) !== undefined) {
         const task = tasks.splice(taskId - 1, 1);
+        console.log('/tasks/:id delete 202: task deleted');
         return response.status(202).json(task);
     } else {
+        console.log('/tasks/:id delete 404: task not found');
         return response.status(404).json({ error: "task was not found"});
     }
 });
