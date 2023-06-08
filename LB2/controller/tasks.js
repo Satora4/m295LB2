@@ -71,7 +71,8 @@ router.get('/tasks/:id', (request, response) => {
   if (request.session.email === null || request.session.email === undefined) return response.status(403).json({ error: 'Forbidden' });
 
   const taskId = request.params.id;
-  const task = tasks.find((t) => t.id === taskId);
+  const filteredTasks = tasks.filter((t) => t.author === request.session.email);
+  const task = filteredTasks.find((t) => t.id === taskId);
 
   if (task !== undefined) {
     console.log('/tasts/:id get 200: sending task');
@@ -86,10 +87,11 @@ router.put('/tasks/:id', (request, response) => {
 
   const taskId = request.params.id;
   const data = request.body;
+  const filteredTasks = tasks.filter((t) => t.author === request.session.email);
   data.id = taskId;
   data.author = request.session.email;
 
-  if (tasks.find((t) => t.id === taskId) !== undefined) {
+  if (filteredTasks.find((t) => t.id === taskId) !== undefined) {
     if (data.completionDate && data.creationDate && data.title) {
       tasks.splice(taskId - 1, 1, data);
       console.log('/tasks/:id put 200: task updated');
@@ -106,8 +108,9 @@ router.delete('/tasks/:id', (request, response) => {
   if (request.session.email === null || request.session.email === undefined) return response.status(403).json({ error: 'Forbidden' });
 
   const taskId = request.params.id;
+  const filteredTasks = tasks.filter((t) => t.author === request.session.email);
 
-  if (tasks.find((t) => t.id === taskId) !== undefined) {
+  if (filteredTasks.find((t) => t.id === taskId) !== undefined) {
     const task = tasks.splice(taskId - 1, 1);
     console.log('/tasks/:id delete 202: task deleted');
     return response.status(202).json(task);
