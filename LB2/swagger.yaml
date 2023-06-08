@@ -1,0 +1,147 @@
+openapi: '3.0.2'
+info:
+  title: LB2 APi
+  version: '1.0'
+servers:
+  - url: http://localhost:3000
+paths:
+  /tasks/tasks:
+    get:
+      summary: Get All Tasks
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+    post:
+      summary: Create new Task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '406':
+          description: Not Acceptable
+  /tasks/tasks/{id}:
+    get:
+      summary: Get a Task by Id
+      parameters:
+        - name: id
+          in: path
+          description: Id of the Task to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '404':
+          description: Task not found
+    put:
+      summary: Update a Task by Id
+      parameters:
+        - name: id
+          in: path
+          description: Id of the Task to update
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '406':
+          description: Not Acceptable
+        '404':
+          description: Task not found
+    delete:
+      summary: Delete a Task by Id
+      parameters:
+        - name: id
+          in: path
+          description: Id of the Task to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        '202':
+          description: Accepted
+        '404':
+          description: Task not found
+  /auth/login:
+    post:
+      summary: Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+  /auth/verify:
+    get:
+      summary: Verify Session
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+  /auth/logout:
+    delete:
+      summary: Logout
+      response:
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        creationDate:
+          type: integer
+        completionDate:
+          type: string
+        author:
+          type: string
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
