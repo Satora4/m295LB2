@@ -20,4 +20,7 @@ Swagger: http://localhost:3000/api-docs/#/
     3. switch dir to ```workplace/m295LB2/LB2```
     4. start program with ```npm run startTasks```
 3. Postman Collection:
-    1. in dir ```workplace/m295LB2``` named ```UeK.postman_collection.json```
+    1. In dir ```workplace/m295LB2``` named ```UeK.postman_collection.json```
+    2. For further explanation view ```TESTING.md``` in root
+4. log.txt
+    1. view the file ```log.txt``` in root
