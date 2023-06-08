@@ -1,4 +1,89 @@
-commit 8adc772412881fffec9d87a4ec127056f9bdc299 (HEAD -> main, origin/main)
+commit 062b015b7aeb7941795aa094d549cf5ab28db2a9 (HEAD -> main, origin/main)
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 14:09:51 2023 +0000
+
+    addet auto Increment to post /tasks
+
+commit 4a715a4cee3308f4d1e04ac8f2fde175d11acfbd
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:58:42 2023 +0000
+
+    adding git Repo to README.md
+
+commit 86b531ae18119ab419ad7b9dc4462c8b1b92498d
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:56:26 2023 +0000
+
+    added log.txt for commit viewing
+
+commit 8adc772412881fffec9d87a4ec127056f9bdc299
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:54:33 2023 +0000
+
+    updated README.md
+
+commit f9ce73c717f4523df1092fc66fe0cb311a86f6eb
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:46:28 2023 +0000
+
+    added filter to get, put, delete for personalised
+    author
+
+commit c12e21f9fbbfd2ab8ea7c498afc50abc1fae9d08
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:38:01 2023 +0000
+
+    Added TESTING.md to explane how to use the tests
+
+commit 607b5b01a7bd81603a8baa9e55f56c6f0369eeb2
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:28:28 2023 +0000
+
+    added aslint & corrections with eslint format
+
+commit b3448079020114518b6ebd0523af038c95117df6
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:03:56 2023 +0000
+
+    Added Uek.postman_collection.json for Hoppscotch
+
+commit 966ad784d3ec000f1f63b0bbdd32bfe249e0ee9f
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:03:10 2023 +0000
+
+    Added swagger.yaml and dependencies
+
+commit 2e262fdf0f2556141571ad10287cee5c5bb7e886
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:02:15 2023 +0000
+
+    Updated README
+
+commit a7a188ab004844649ea9f03b1683b0dd8e3089f8
+Author: Satora4 <89255458+Satora4@users.noreply.github.com>
+Date:   Thu Jun 8 14:02:13 2023 +0200
+
+    Created README.md
+
+commit 062b015b7aeb7941795aa094d549cf5ab28db2a9 (HEAD -> main, origin/main)
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 14:09:51 2023 +0000
+
+    addet auto Increment to post /tasks
+
+commit 4a715a4cee3308f4d1e04ac8f2fde175d11acfbd
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:58:42 2023 +0000
+
+    adding git Repo to README.md
+
+commit 86b531ae18119ab419ad7b9dc4462c8b1b92498d
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:56:26 2023 +0000
+
+    added log.txt for commit viewing
+
+commit 8adc772412881fffec9d87a4ec127056f9bdc299
 Author: Joel Vontobel <joel.vontobel@ergon.ch>
 Date:   Thu Jun 8 13:54:33 2023 +0000
 
