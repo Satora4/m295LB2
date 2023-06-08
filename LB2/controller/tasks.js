@@ -50,16 +50,18 @@ router.get('/tasks', (request, response) => {
   return response.json(tasks.filter((t) => t.author === request.session.email)).status(200);
 });
 
+let autoIncrementID = 5;
+
 router.post('/tasks', (request, response) => {
   if (request.session.email === null || request.session.email === undefined) return response.status(403).json({ error: 'Forbidden' });
 
   const data = request.body;
 
   if (data.completionDate && data.creationDate && data.title) {
-    const id = tasks.length + 1;
-    data.id = id.toString();
+    data.id = autoIncrementID.toString();
     data.author = request.session.email;
     tasks.push(data);
+    autoIncrementID += 1;
     console.log('/tasts post 201: task created');
     return response.status(201).json(tasks.find((t) => t.id === data.id));
   }
