@@ -1,0 +1,67 @@
+commit 8adc772412881fffec9d87a4ec127056f9bdc299 (HEAD -> main, origin/main)
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:54:33 2023 +0000
+
+    updated README.md
+
+commit f9ce73c717f4523df1092fc66fe0cb311a86f6eb
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:46:28 2023 +0000
+
+    added filter to get, put, delete for personalised
+    author
+
+commit c12e21f9fbbfd2ab8ea7c498afc50abc1fae9d08
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:38:01 2023 +0000
+
+    Added TESTING.md to explane how to use the tests
+
+commit 607b5b01a7bd81603a8baa9e55f56c6f0369eeb2
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:28:28 2023 +0000
+
+    added aslint & corrections with eslint format
+
+commit b3448079020114518b6ebd0523af038c95117df6
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:03:56 2023 +0000
+
+    Added Uek.postman_collection.json for Hoppscotch
+
+commit 966ad784d3ec000f1f63b0bbdd32bfe249e0ee9f
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:03:10 2023 +0000
+
+    Added swagger.yaml and dependencies
+
+commit 2e262fdf0f2556141571ad10287cee5c5bb7e886
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 13:02:15 2023 +0000
+
+    Updated README
+
+commit a7a188ab004844649ea9f03b1683b0dd8e3089f8
+Author: Satora4 <89255458+Satora4@users.noreply.github.com>
+Date:   Thu Jun 8 14:02:13 2023 +0200
+
+    Created README.md
+
+commit f4785542309994df47068a0f189debf28f92093a
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 11:53:50 2023 +0000
+
+    endpoints for authentication ready on port 3000
+    + logging
+
+commit 84bf08a18b21816b9a0e5390d107088b206dcc0f
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 11:20:35 2023 +0000
+
+    endpoints for tasks ready on port 3000
+
+commit 5690576c7c0ed5528fb9aa7edd9a74c55ef098e6
+Author: Joel Vontobel <joel.vontobel@ergon.ch>
+Date:   Thu Jun 8 11:20:04 2023 +0000
+
+    Initial setup
